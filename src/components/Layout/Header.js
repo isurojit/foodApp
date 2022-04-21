@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Header.module.css";
+import HeaderCartButton from "./HeaderCartButton";
 import HeaderImage from "./HeaderImage";
 
 const Header = (props) => {
@@ -7,7 +8,7 @@ const Header = (props) => {
     <React.Fragment>
       <header className={classes.header}>
         <h1>Heaven Of Foods</h1>
-        <button>Cart</button>
+        <HeaderCartButton />
       </header>
       <HeaderImage />
     </React.Fragment>
