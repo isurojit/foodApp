@@ -4,13 +4,20 @@ import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 
 const App = () => {
+  const [cartIsShown, setCartIsShown] = useState(false);
 
-  const[cartIsShown, setCartIsShown]= useState(false);
-  
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   return (
     <React.Fragment>
-      <Cart />
-      <Header />
+      {cartIsShown && <Cart onCloseCart={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
       </main>
